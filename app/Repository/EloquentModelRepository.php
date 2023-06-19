@@ -5,7 +5,7 @@ namespace App\Repository;
 use Illuminate\Database\Eloquent\Model;
 use App\Repository\InterfaceEloquentModelRepository;
 
-class EloquenModeltRepository implements InterfaceEloquentModelRepository
+class EloquentModelRepository implements InterfaceEloquentModelRepository
 {
     protected $model;
 
@@ -15,7 +15,7 @@ class EloquenModeltRepository implements InterfaceEloquentModelRepository
     }
     public function getById(int $id)
     {
-        return $this->model->where('id', $id)->refresh();
+        return $this->model->where('id', $id)->get();
     }
 
     public function create(array $attributes = [])
