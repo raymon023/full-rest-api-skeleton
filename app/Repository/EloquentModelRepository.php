@@ -30,6 +30,6 @@ class EloquentModelRepository implements InterfaceEloquentModelRepository
 
     public function update(Model $model, array $attributes = [])
     {
-        return $this->$model->update($attributes)->refresh();
+        return $this->$model->update($attributes)->fresh();
     }
 }
